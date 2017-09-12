@@ -1,0 +1,7 @@
+//DEFINE THE STATE
+
+
+
+
+
+//ACTIONS
