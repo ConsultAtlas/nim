@@ -5,7 +5,7 @@
 // - Who's turn it is
 // - How many players
 // - 
-var numberOfDors = 16;
+var numberOfDots = 16;
 var isPlayerOnesTurn = true;
 
 
@@ -20,8 +20,8 @@ function printBoard() {
 // should numberOfDors *'s to the screen
 
 	var star = "*";
-
-	console.log(star.repeat(numberOfDors));
+	var numDotsToPrint = Math.max(numberOfDots, 0);
+	console.log(star.repeat(numDotsToPrint));
 
 }
 
@@ -29,11 +29,11 @@ function gameIsInProgress() {
 	//if the number of dots is more than ), then the game is still in progress.
 	var inProgress = true;
 
-	if (numberOfDors > 0) {
-		return = true;
+	if (numberOfDots > 0) {
+		return true;
 
 	} else {
-		return = false;
+		return false;
 	}
 
 	return inProgress;
@@ -57,11 +57,11 @@ function promptUserForDots() {
 
 function removeDots(dotsToRemove) {
 	// Need to remove dotsToRemove from the number of dots
-	numberOfDots -= dotsRemove;
+	numberOfDots -= dotsToRemove;
 
 }
 
-function switchplayers() {
+function switchPlayers() {
 	isPlayerOnesTurn = !isPlayerOnesTurn;
 }
 
@@ -80,11 +80,11 @@ printBoard();
 
 while ( gameIsInProgress () ) { //checkForWinner needs to return true if the game is still in progress,
 	// false if someone has won.
-	
+	switchPlayers();
 	var dotsToRemove = promptUserForDots();
 	removeDots(dotsToRemove);
 	printBoard();
-	switchPlayers();
+	
 	
 }
 
@@ -92,8 +92,8 @@ while ( gameIsInProgress () ) { //checkForWinner needs to return true if the gam
 // We need to alert either "player 1 wins" or "p;ayer 2 wins"
 
 if (isPlayerOnesTurn) {
-	alert("Game over! player 2 wins!")
-} else {
 	alert("Game over! player 1 wins!")
+} else {
+	alert("Game over! player 2 wins!")
 }
 
