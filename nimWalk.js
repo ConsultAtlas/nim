@@ -6,7 +6,7 @@
 // - How many players
 // - 
 var numberOfDors = 16;
-
+var isPlayerOnesTurn = true;
 
 
 //ACTIONS (These are functions that mess with the state)
@@ -55,6 +55,15 @@ function promptUserForDots() {
 
 }
 
+function removeDots(dotsToRemove) {
+	// Need to remove dotsToRemove from the number of dots
+	numberOfDots -= dotsRemove;
+
+}
+
+function switchplayers() {
+	isPlayerOnesTurn = !isPlayerOnesTurn;
+}
 
 // Kicking Everything Off
 // X Show the board right away
@@ -78,3 +87,13 @@ while ( gameIsInProgress () ) { //checkForWinner needs to return true if the gam
 	switchPlayers();
 	
 }
+
+
+// We need to alert either "player 1 wins" or "p;ayer 2 wins"
+
+if (isPlayerOnesTurn) {
+	alert("Game over! player 2 wins!")
+} else {
+	alert("Game over! player 1 wins!")
+}
+
